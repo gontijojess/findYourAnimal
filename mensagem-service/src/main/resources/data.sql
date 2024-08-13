@@ -1,0 +1,3 @@
+INSERT INTO MENSAGEM(nome, email, telefone, texto, animal_id) VALUES ('Maria José', 'mjose@gmail.com', '51999999991', 'Parece muito o meu cachorro, ele tem uma mancha em formato de entrela perto da para esquerda. Posso ir dar uma olahada?', 1)
+INSERT INTO MENSAGEM(nome, email, telefone, texto, animal_id) VALUES ('Marcos Alberto', 'marcos@gmail.com', '51999999992', 'Parece o Toby, cachorro da minha vizinha. Vou falar com ela. Se puderem entrar em contato.', 1)
+INSERT INTO MENSAGEM(nome, email, telefone, texto, animal_id) VALUES ('Silvana Costa', 'sil@gmail.com', '51999999993', 'Vocês sabem me informar se esse gato tem a barriga branca? Parece muito o meu', 2)

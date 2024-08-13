@@ -1,0 +1,1 @@
+INSERT INTO ONG(nome_ong, nome_responsavel, email, senha, telefone) VALUES ('Ong Resgatando Animais', 'Ana Cláudia', 'ong_resgates@gmail.com', 'abc123', '51999999999')

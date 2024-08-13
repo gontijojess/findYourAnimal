@@ -1,0 +1,1 @@
+INSERT INTO ANIMAL(sexo, cor, porte, descricao, status, local_de_resgate, url_foto, especie, ong, ong_id) VALUES (1, 'Branco', 2, 'Achado dentro de uma casa azul', 0, 'Bairro beija-flor', 'http://fotos.com/pet1.jpg', 'cachorro', 'Ong 1', 1)
