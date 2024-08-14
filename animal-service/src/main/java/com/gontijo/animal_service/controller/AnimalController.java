@@ -89,7 +89,7 @@ public class AnimalController {
         return ResponseEntity.ok(animais);
     }
 
-    @GetMapping("/mensagens/{id}")
+    @GetMapping("/mensagens/animal/{id}")
     public ResponseEntity<List<Mensagem>> getMessageByAnimalId(@PathVariable Long id) {
         List<Mensagem> mensagens = mensagemService.getMessageByPetId(id);
         if (mensagens.isEmpty()) {
