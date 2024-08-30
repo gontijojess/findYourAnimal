@@ -82,7 +82,7 @@ public class AnimalServiceTests {
     }
 
     @Test
-    @DisplayName(value="Deve inserir um animal na lista")
+    @DisplayName("Deve inserir um animal no banco")
     public void testInsert() {
         List<Animal> all = animalService.findAll();
         int estadoInicial = all.size();
@@ -103,7 +103,7 @@ public class AnimalServiceTests {
     }
 
     @Test
-    @DisplayName(value="Deve deletar um animal do banco")
+    @DisplayName("Deve deletar um animal do banco")
     public void testDelete(){
         Animal animal = new Animal();
         animal.setSexo(Sexo.FEMEA);

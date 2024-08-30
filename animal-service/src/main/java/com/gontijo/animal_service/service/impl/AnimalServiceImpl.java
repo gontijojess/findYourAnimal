@@ -50,4 +50,5 @@ public class AnimalServiceImpl implements AnimalService {
         List<Animal> filtered = all.stream().filter(animal -> animal.getCor().toLowerCase().startsWith(cor.toLowerCase())).toList();
         return filtered;
     }
+
 }

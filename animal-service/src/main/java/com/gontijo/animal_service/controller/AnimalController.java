@@ -2,6 +2,7 @@ package com.gontijo.animal_service.controller;
 
 import com.gontijo.animal_service.model.Animal;
 import com.gontijo.animal_service.model.Mensagem;
+import com.gontijo.animal_service.model.Status;
 import com.gontijo.animal_service.payload.MessagePayload;
 import com.gontijo.animal_service.service.AnimalService;
 import com.gontijo.animal_service.service.MensagemService;
@@ -53,6 +54,7 @@ public class AnimalController {
     @PostMapping
     public ResponseEntity<MessagePayload> create (@RequestBody Animal animal){
         try {
+            animal.setStatus(Status.DISPONIVEL);
             animalService.save(animal);
             return ResponseEntity.status(HttpStatus.CREATED).body(new MessagePayload("Criado com sucesso!"));
         } catch (Exception ex) {
@@ -89,7 +91,7 @@ public class AnimalController {
         return ResponseEntity.ok(animais);
     }
 
-    @GetMapping("/mensagens/animal/{id}")
+    @GetMapping("/{id}/mensagens")
     public ResponseEntity<List<Mensagem>> getMessageByAnimalId(@PathVariable Long id) {
         List<Mensagem> mensagens = mensagemService.getMessageByPetId(id);
         if (mensagens.isEmpty()) {
@@ -97,5 +99,7 @@ public class AnimalController {
         }
         return ResponseEntity.ok(mensagens);
     }
+
+
 
 }

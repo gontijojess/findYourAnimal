@@ -1,1 +1,3 @@
 INSERT INTO ONG(nome_ong, nome_responsavel, email, senha, telefone) VALUES ('Ong Resgatando Animais', 'Ana Cláudia', 'ong_resgates@gmail.com', 'abc123', '51999999999')
+INSERT INTO ONG(nome_ong, nome_responsavel, email, senha, telefone) VALUES ('Abrigo Fauna e Flora', 'Maria do Socorro', 'fauna_flora@gmail.com', 'abc123', '51999995555')
+INSERT INTO ONG(nome_ong, nome_responsavel, email, senha, telefone) VALUES ('Salvando vidas', 'Marcos Alberto', 'marcos@gmail.com', 'abc123', '51994569999')

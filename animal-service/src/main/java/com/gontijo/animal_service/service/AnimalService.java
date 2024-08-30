@@ -19,4 +19,5 @@ public interface AnimalService {
     List<Animal> findByOngId(Long id);
 
     List<Animal> filterByColor(String cor);
+
 }

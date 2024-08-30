@@ -10,4 +10,6 @@ public interface MensagemService {
     List<Mensagem> findByAnimalId(Long id);
 
     void deleteById(Long id);
+
+    List<Mensagem> findAll();
 }

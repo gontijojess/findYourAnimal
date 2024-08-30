@@ -1,7 +1,10 @@
 package com.gontijo.ong_service.controller;
 
+import com.gontijo.ong_service.model.Animal;
 import com.gontijo.ong_service.model.Ong;
+
 import com.gontijo.ong_service.payload.MessagePayload;
+import com.gontijo.ong_service.service.AnimalService;
 import com.gontijo.ong_service.service.OngService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +21,7 @@ import java.util.Optional;
 @Slf4j
 public class OngController {
     private final OngService ongService;
+    private final AnimalService animalService;
 
     @GetMapping
     public ResponseEntity<?> findAll () {
@@ -66,6 +70,15 @@ public class OngController {
         } catch (Exception ex) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new MessagePayload(ex.getMessage()));
         }
+    }
+
+    @GetMapping("/{id}/animals")
+    public ResponseEntity<List<Animal>> getAnimalsByOngId(@PathVariable Long id) {
+        List<Animal> animais = animalService.getAnimalByOngId(id);
+        if (animais.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(animais);
     }
 
 }

@@ -1,5 +1,5 @@
 package com.gontijo.animal_service.model;
 
 public enum Status {
-    DISPONIVEL, INDISPONIVEL
+    DISPONIVEL, DISPONIVEL_MENSAGEM, INDISPONIVEL
 }
