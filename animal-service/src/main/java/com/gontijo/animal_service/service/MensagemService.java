@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface MensagemService {
 
-    List<Mensagem> getMessageByPetId(Long id);
+    List<Mensagem> getById(Long id);
 }

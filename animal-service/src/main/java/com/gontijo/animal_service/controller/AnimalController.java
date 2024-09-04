@@ -2,7 +2,7 @@ package com.gontijo.animal_service.controller;
 
 import com.gontijo.animal_service.model.Animal;
 import com.gontijo.animal_service.model.Mensagem;
-import com.gontijo.animal_service.model.Status;
+import com.gontijo.animal_service.model.enums.Status;
 import com.gontijo.animal_service.payload.MessagePayload;
 import com.gontijo.animal_service.service.AnimalService;
 import com.gontijo.animal_service.service.MensagemService;
@@ -82,8 +82,8 @@ public class AnimalController {
         }
     }
 
-    @GetMapping("/ong/{id}")
-    public ResponseEntity<List<Animal>> getAnimalsByOngId(@PathVariable Long id) {
+    @GetMapping("/ong")
+    public ResponseEntity<List<Animal>> getAnimalsByOngId(@RequestParam Long id) { // "ex: localhost:xxx/animal/ong?id=2"
         List<Animal> animais = animalService.findByOngId(id);
         if (animais.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -93,7 +93,7 @@ public class AnimalController {
 
     @GetMapping("/{id}/mensagens")
     public ResponseEntity<List<Mensagem>> getMessageByAnimalId(@PathVariable Long id) {
-        List<Mensagem> mensagens = mensagemService.getMessageByPetId(id);
+        List<Mensagem> mensagens = mensagemService.getById(id);
         if (mensagens.isEmpty()) {
             return ResponseEntity.noContent().build();
         }

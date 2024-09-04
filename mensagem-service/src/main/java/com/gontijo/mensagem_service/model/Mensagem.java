@@ -1,10 +1,11 @@
 package com.gontijo.mensagem_service.model;
 
+import com.gontijo.mensagem_service.model.enums.StatusMensagem;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Table(name = "MENSAGEM")
 @Entity
+@ToString
 public class Mensagem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +22,11 @@ public class Mensagem {
     private String email;
     private String telefone;
     private String texto;
+    @Enumerated(EnumType.STRING)
+    private StatusMensagem status;
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+    @Column(name="data_criacao")
+    private LocalDateTime dataCriacao;
     
     @Column(name="animal_id")
     private int animalId;

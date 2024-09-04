@@ -72,13 +72,15 @@ public class OngController {
         }
     }
 
-    @GetMapping("/{id}/animals")
+    @GetMapping("/{id}/animais")
     public ResponseEntity<List<Animal>> getAnimalsByOngId(@PathVariable Long id) {
-        List<Animal> animais = animalService.getAnimalByOngId(id);
+        List<Animal> animais = animalService.getById(id);
         if (animais.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(animais);
     }
+
+
 
 }

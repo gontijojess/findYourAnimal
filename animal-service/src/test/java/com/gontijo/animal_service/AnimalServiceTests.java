@@ -1,9 +1,10 @@
 package com.gontijo.animal_service;
 
 import com.gontijo.animal_service.model.Animal;
-import com.gontijo.animal_service.model.Porte;
-import com.gontijo.animal_service.model.Sexo;
-import com.gontijo.animal_service.model.Status;
+import com.gontijo.animal_service.model.enums.Especie;
+import com.gontijo.animal_service.model.enums.Porte;
+import com.gontijo.animal_service.model.enums.Sexo;
+import com.gontijo.animal_service.model.enums.Status;
 import com.gontijo.animal_service.service.AnimalService;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.DisplayName;
@@ -36,7 +37,7 @@ public class AnimalServiceTests {
         animal1.setStatus(Status.DISPONIVEL);
         animal1.setLocalDeResgate("Bairro das Flores");
         animal1.setUrlFoto("http://meupet.com/123");
-        animal1.setEspecie("Gato");
+        animal1.setEspecie(Especie.GATO);
         animal1.setOngId(1);
         animalService.save(animal1);
 
@@ -48,7 +49,7 @@ public class AnimalServiceTests {
         animal2.setStatus(Status.DISPONIVEL);
         animal2.setLocalDeResgate("Bairro dos Pinheiros");
         animal2.setUrlFoto("http://meupet.com/456");
-        animal2.setEspecie("Cachorro");
+        animal2.setEspecie(Especie.CACHORRO);
         animal2.setOngId(2);
         animalService.save(animal2);
 
@@ -72,7 +73,7 @@ public class AnimalServiceTests {
         animal.setStatus(Status.DISPONIVEL);
         animal.setLocalDeResgate("Bairro das Flores");
         animal.setUrlFoto("http://meupet.com/123");
-        animal.setEspecie("Gato");
+        animal.setEspecie(Especie.GATO);
         animal.setOngId(1);
         animalService.save(animal);
         List<Animal> all = animalService.findAll();
@@ -94,7 +95,7 @@ public class AnimalServiceTests {
         animal.setStatus(Status.DISPONIVEL);
         animal.setLocalDeResgate("Bairro das Flores");
         animal.setUrlFoto("http://meupet.com/123");
-        animal.setEspecie("Gato");
+        animal.setEspecie(Especie.GATO);
         animal.setOngId(1);
         animalService.save(animal);
         all = animalService.findAll();
@@ -113,7 +114,7 @@ public class AnimalServiceTests {
         animal.setStatus(Status.DISPONIVEL);
         animal.setLocalDeResgate("Bairro das Flores");
         animal.setUrlFoto("http://meupet.com/123");
-        animal.setEspecie("Gato");
+        animal.setEspecie(Especie.GATO);
         animal.setOngId(1);
         animalService.save(animal);
         List<Animal> all = animalService.findAll();
@@ -136,7 +137,7 @@ public class AnimalServiceTests {
         animal.setStatus(Status.DISPONIVEL);
         animal.setLocalDeResgate("Bairro das Flores");
         animal.setUrlFoto("http://meupet.com/123");
-        animal.setEspecie("Gato");
+        animal.setEspecie(Especie.GATO);
         animal.setOngId(1);
         animalService.save(animal);
 
@@ -151,7 +152,7 @@ public class AnimalServiceTests {
         updatedAnimal.setStatus(Status.DISPONIVEL);
         updatedAnimal.setLocalDeResgate("Bairro das Flores");
         updatedAnimal.setUrlFoto("http://meupet.com/123");
-        updatedAnimal.setEspecie("Gato");
+        updatedAnimal.setEspecie(Especie.GATO);
         updatedAnimal.setOngId(1);
         animalService.update(animal.getId(), updatedAnimal);
 
@@ -175,7 +176,7 @@ public class AnimalServiceTests {
         animal1.setStatus(Status.DISPONIVEL);
         animal1.setLocalDeResgate("Bairro das Flores");
         animal1.setUrlFoto("http://meupet.com/123");
-        animal1.setEspecie("Gato");
+        animal1.setEspecie(Especie.GATO);
         animal1.setOngId(1);
         animalService.save(animal1);
 
@@ -187,7 +188,7 @@ public class AnimalServiceTests {
         animal2.setStatus(Status.DISPONIVEL);
         animal2.setLocalDeResgate("Bairro das Flores");
         animal2.setUrlFoto("http://meupet.com/789");
-        animal2.setEspecie("Cavalo");
+        animal2.setEspecie(Especie.GATO);
         animal2.setOngId(1);
         animalService.save(animal2);
 

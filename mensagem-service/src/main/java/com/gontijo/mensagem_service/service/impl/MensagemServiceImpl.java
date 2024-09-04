@@ -1,6 +1,7 @@
 package com.gontijo.mensagem_service.service.impl;
 
 import com.gontijo.mensagem_service.model.Mensagem;
+import com.gontijo.mensagem_service.model.enums.StatusMensagem;
 import com.gontijo.mensagem_service.repository.MensagemRepository;
 import com.gontijo.mensagem_service.service.MensagemService;
 import lombok.RequiredArgsConstructor;
@@ -33,5 +34,17 @@ public class MensagemServiceImpl implements MensagemService {
         return mensagemRepository.findAll();
     }
 
+    @Override
+    public Mensagem updateStatusEnviado(Long id, Mensagem mensagemAtualizada) {
+        mensagemAtualizada.setId(id);
+        mensagemAtualizada.setStatus(StatusMensagem.ENVIADA);
+        return mensagemRepository.save(mensagemAtualizada);
+    }
 
+    @Override
+    public Mensagem updateStatusErro(Long id, Mensagem mensagemAtualizada) {
+        mensagemAtualizada.setId(id);
+        mensagemAtualizada.setStatus(StatusMensagem.ERRO);
+        return mensagemRepository.save(mensagemAtualizada);
+    }
 }

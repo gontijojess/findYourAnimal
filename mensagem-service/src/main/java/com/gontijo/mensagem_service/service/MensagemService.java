@@ -12,4 +12,8 @@ public interface MensagemService {
     void deleteById(Long id);
 
     List<Mensagem> findAll();
+
+    Mensagem updateStatusEnviado(Long id, Mensagem mensagemAtualizada);
+
+    Mensagem updateStatusErro(Long id, Mensagem mensagemAtualizada);
 }

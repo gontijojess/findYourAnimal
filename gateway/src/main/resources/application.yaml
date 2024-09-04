@@ -1,0 +1,38 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: animais
+          uri: lb://ANIMAL-SERVICE
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/animal/**
+        - id: ongs
+          uri: lb://ONG-SERVICE
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/ong/**
+        - id: mensagens
+          uri: lb://MENSAGEM-SERVICE
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/mensagem/**
+        - id: notificacoes
+          uri: lb://NOTIFICACAO-SERVICE
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/notificacao/**
+  application:
+    name: gateway-service
+server:
+  port: 9999
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+  client:
+    service-url:
+      default: http://localhost:8761/eureka/

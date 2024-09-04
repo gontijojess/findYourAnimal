@@ -22,5 +22,6 @@ public class Ong {
     private String nomeResponsavel;
     private String email;
     private String senha;
+    @Column(name="telefone")
     private String telefone;
 }

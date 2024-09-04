@@ -1,5 +1,7 @@
+app:
+  myport: ${PORT:0}
 server:
-  port: 8083
+  port: ${app.myport}
 spring:
   application:
     name: mensagem-service
@@ -17,3 +19,6 @@ spring:
     show-sql: false
     database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

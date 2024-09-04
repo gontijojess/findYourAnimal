@@ -30,7 +30,7 @@ public class OngServiceTests {
         ong1.setNomeResponsavel("Maria Clara Azevedo");
         ong1.setEmail("maria_clara@gmail.com");
         ong1.setSenha("123456*!ABC");
-        ong1.setTelefone("(51)99956-4321");
+        ong1.setTelefone("(51) 99326-4563");
         ongService.save(ong1);
 
         Ong ong2 = new Ong();
@@ -38,7 +38,7 @@ public class OngServiceTests {
         ong2.setNomeResponsavel("Marcos Augusto Silva");
         ong2.setEmail("msilva@gmail.com");
         ong2.setSenha("123456*!ABC");
-        ong2.setTelefone("(51)99326-4563");
+        ong2.setTelefone("(51) 94566-4563");
         ongService.save(ong2);
 
         all = ongService.findAll();
@@ -59,7 +59,7 @@ public class OngServiceTests {
         ong1.setNomeResponsavel("Maria Clara Azevedo");
         ong1.setEmail("maria_clara@gmail.com");
         ong1.setSenha("123456*!ABC");
-        ong1.setTelefone("(51)99956-4321");
+        ong1.setTelefone("(51) 99326-4563");
         ongService.save(ong1);
         Optional<Ong> byId = ongService.findById(ong1.getId());
         assertTrue(byId.isPresent());
@@ -77,7 +77,7 @@ public class OngServiceTests {
         ong.setNomeResponsavel("Maria Clara Azevedo");
         ong.setEmail("maria_clara@gmail.com");
         ong.setSenha("123456*!ABC");
-        ong.setTelefone("(51)99956-4321");
+        ong.setTelefone("(51) 99326-4563");
         ongService.save(ong);
         all = ongService.findAll();
         int estadoFinal = all.size();
@@ -93,7 +93,7 @@ public class OngServiceTests {
         ong.setNomeResponsavel("Maria Clara Azevedo");
         ong.setEmail("maria_clara@gmail.com");
         ong.setSenha("123456*!ABC");
-        ong.setTelefone("(51)99956-4321");
+        ong.setTelefone("(51) 99326-4563");
         ongService.save(ong);
 
         List<Ong> all = ongService.findAll();
@@ -104,7 +104,7 @@ public class OngServiceTests {
         updatedOng.setNomeResponsavel("Maria Clara Azevedo");
         updatedOng.setEmail("maria_clara@gmail.com");
         updatedOng.setSenha("123456*!ABC");
-        updatedOng.setTelefone("(51)99956-4321");
+        updatedOng.setTelefone("(51) 99326-4563");
         ongService.update(ong.getId(), updatedOng);
 
         List<Ong> allOngs = ongService.findAll();
