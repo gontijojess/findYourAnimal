@@ -1,11 +1,9 @@
 package com.gontijo.ong_service.service.impl;
-
 import com.gontijo.ong_service.model.Ong;
 import com.gontijo.ong_service.repository.OngRepository;
 import com.gontijo.ong_service.service.OngService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
