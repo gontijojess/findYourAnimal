@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +33,11 @@ public class MensagemServiceImpl implements MensagemService {
     @Override
     public List<Mensagem> findAll() {
         return mensagemRepository.findAll();
+    }
+
+    @Override
+    public Optional<Mensagem> findById(Long id) {
+        return mensagemRepository.findById(id);
     }
 
     @Override
