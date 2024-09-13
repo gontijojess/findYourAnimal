@@ -15,20 +15,19 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class NotificacaoConsumer {
     private final NotificacaoProducer notificacaoProducer;
+
     @RabbitListener(queues = {"mensagem-enviada-queue"})
     public void receive(@Payload String message) throws JsonProcessingException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         Mensagem mensagem = objectMapper.readValue(message, Mensagem.class);
-        log.info("Enviando notificação");
         try{
-            int resultado = 10/0;
-            //notificacaoProducer.sendNotificao(mensagem);
+            Thread.sleep(8000);
+            notificacaoProducer.sendNotificao(mensagem);
             notificacaoProducer.sendNotificacaoEnviada(mensagem);
         } catch(Exception e) {
             notificacaoProducer.sendNotificacaoErro(mensagem);
-            log.info("Cheguei no catch");
         }
 
     }

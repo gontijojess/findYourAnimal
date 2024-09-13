@@ -3,19 +3,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Mensagem {
+public class Ong {
     private long id;
-    private String nome;
+    private String nomeOng;
+    private String nomeResponsavel;
     private String email;
+    private String senha;
     private String telefone;
-    private String texto;
-    private String status;
-    private LocalDateTime dataCriacao;
-    private int animalId;
 }
