@@ -7,25 +7,29 @@ spring:
           filters:
             - StripPrefix=1
           predicates:
-            - Path=/animal/**
+            - Path=/animal/**, /animal/v3/api-docs/**
+
         - id: ongs
           uri: lb://ONG-SERVICE
           filters:
             - StripPrefix=1
           predicates:
             - Path=/ong/**
+
         - id: mensagens
           uri: lb://MENSAGEM-SERVICE
           filters:
             - StripPrefix=1
           predicates:
             - Path=/mensagem/**
+
         - id: notificacoes
           uri: lb://NOTIFICACAO-SERVICE
           filters:
             - StripPrefix=1
           predicates:
             - Path=/notificacao/**
+
   application:
     name: gateway-service
 server:
@@ -36,3 +40,14 @@ eureka:
   client:
     service-url:
       default: http://localhost:8761/eureka/
+springdoc:
+  swagger-ui:
+    urls:
+      - name: animal
+        url: /animal/v3/api-docs
+      - name: ong
+        url: /ong/v3/api-docs
+      - name: mensagem
+        url: /mensagem/v3/api-docs
+      - name: notificacao
+        url: /notificacao/v3/api-docs
