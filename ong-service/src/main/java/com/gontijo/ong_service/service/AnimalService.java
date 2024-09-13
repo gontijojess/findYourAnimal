@@ -5,5 +5,6 @@ import com.gontijo.ong_service.model.Animal;
 import java.util.List;
 
 public interface AnimalService {
-    List<Animal> getById(Long id);
+    List<Animal> getAnimalsByOngId(Long id);
+    Animal getAnimalById(Long id);
 }

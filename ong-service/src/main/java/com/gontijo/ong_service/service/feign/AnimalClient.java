@@ -11,5 +11,9 @@ import java.util.List;
 @FeignClient("ANIMAL-SERVICE")
 public interface AnimalClient {
     @GetMapping("/ong")
-    List<Animal> getById(@RequestParam("id") Long id);
+    List<Animal> getAnimalsByOngId(@RequestParam("id") Long id);
+
+    @GetMapping("/{id}")
+    Animal getAnimalById(@PathVariable Long id);
 }
+
