@@ -14,4 +14,5 @@ public class Mensagem {
     private String email;
     private String telefone;
     private String texto;
+    private int animalId;
 }

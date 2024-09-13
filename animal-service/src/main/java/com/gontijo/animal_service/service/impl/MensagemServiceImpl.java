@@ -19,12 +19,3 @@ public class MensagemServiceImpl implements MensagemService {
         return mensagemClient.getById(id);
     }
 }
-//        RestClient restClient = RestClient.create();
-//        var serverUrl = String.format("http://localhost:8083/animal/%d", id);
-//        ResponseEntity<List<Mensagem>> response = restClient.get()
-//                .uri(serverUrl)
-//                .retrieve()
-//                .toEntity(new ParameterizedTypeReference<List<Mensagem>>() {});
-//
-//        return response.getBody();
-//    }
