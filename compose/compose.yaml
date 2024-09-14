@@ -1,0 +1,59 @@
+services:
+  rabbit:
+    image: rabbitmq:3.13-management
+    container_name: RABBIT-SERVER
+    ports:
+      - "15672:15672"
+    networks:
+      - find_animal
+  eureka:
+    image: gontijojessica/eureka:latest
+    container_name: EUREKA-SERVER
+    ports:
+      - "8761:8761"
+    networks:
+      - find_animal
+  gateway:
+    image: gontijojessica/gateway:latest
+    container_name: GATEWAY-SERVER
+    ports:
+      - "9999:9999"
+    networks:
+      - find_animal
+    depends_on:
+      - eureka
+  ong-service:
+    image: gontijojessica/ong:latest
+    container_name: ONG-SERVER
+    networks:
+      - find_animal
+    depends_on:
+      - gateway
+      - rabbit
+  animal-service:
+    image: gontijojessica/animal:latest
+    container_name: ANIMAL-SERVER
+    networks:
+      - find_animal
+    depends_on:
+      - gateway
+      - rabbit
+  mensagem-service:
+    image: gontijojessica/mensagem:latest
+    container_name: MENSAGEM-SERVER
+    networks:
+      - find_animal
+    depends_on:
+      - gateway
+      - rabbit
+  notificacao-service:
+    image: gontijojessica/notificacao:latest
+    container_name: NOTIFICACAO-SERVER
+    networks:
+      - find_animal
+    depends_on:
+      - gateway
+      - rabbit
+networks:
+  find_animal:
+    driver: bridge

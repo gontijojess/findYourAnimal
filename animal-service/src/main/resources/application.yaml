@@ -1,7 +1,7 @@
 app:
   myport: ${PORT:0}
 server:
-  port: ${app.myport}
+  port: 8080
 spring:
   application:
     name: animal-service
@@ -22,3 +22,6 @@ spring:
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://EUREKA-SERVER:8761/eureka
