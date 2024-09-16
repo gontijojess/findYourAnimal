@@ -20,6 +20,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class AnimalController {
     private final AnimalService animalService;
     private final MensagemService mensagemService;

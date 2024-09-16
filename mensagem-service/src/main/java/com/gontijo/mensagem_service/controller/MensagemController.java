@@ -23,6 +23,7 @@ import java.util.Optional;
 @RequestMapping("/")
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin(origins = "*")
 public class MensagemController {
     private final MensagemService mensagemService;
     private final MensagemProducer mensagemProducer;

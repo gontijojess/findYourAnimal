@@ -22,6 +22,7 @@ import java.util.Optional;
 @RequestMapping("/")
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin(origins = "*")
 public class OngController {
     private final OngService ongService;
     private final AnimalService animalService;

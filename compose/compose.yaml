@@ -21,39 +21,42 @@ services:
     networks:
       - find_animal
     depends_on:
-      - eureka
+      - ong-service
+      - animal-service
+      - mensagem-service
+      - notificacao-service
   ong-service:
     image: gontijojessica/ong:latest
     container_name: ONG-SERVER
     networks:
       - find_animal
     depends_on:
-      - gateway
       - rabbit
+      - eureka
   animal-service:
     image: gontijojessica/animal:latest
     container_name: ANIMAL-SERVER
     networks:
       - find_animal
     depends_on:
-      - gateway
       - rabbit
+      - eureka
   mensagem-service:
     image: gontijojessica/mensagem:latest
     container_name: MENSAGEM-SERVER
     networks:
       - find_animal
     depends_on:
-      - gateway
       - rabbit
+      - eureka
   notificacao-service:
     image: gontijojessica/notificacao:latest
     container_name: NOTIFICACAO-SERVER
     networks:
       - find_animal
     depends_on:
-      - gateway
       - rabbit
+      - eureka
 networks:
   find_animal:
     driver: bridge

@@ -19,6 +19,11 @@ spring:
     show-sql: false
     database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
