@@ -32,17 +32,18 @@ spring:
           predicates:
             - Path=/notificacao/**
       globalcors:
-        cors-configurations:
+        corsConfigurations:
           '[/**]':
-            allowed-origins: '*'
-            allowed-methods:
+            allowedOrigins: 'http://localhost/9999'
+            allowedMethods:
               - GET
               - POST
               - PUT
               - DELETE
               - OPTIONS
-            allowed-headers:
+            allowedHeaders:
               - '*'
+            allow-credentials: true
 server:
   port: 9999
 eureka:

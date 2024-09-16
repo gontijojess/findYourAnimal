@@ -25,6 +25,8 @@ public class AnimalController {
     private final AnimalService animalService;
     private final MensagemService mensagemService;
 
+    @CrossOrigin(origins = "*")
+    @GetMapping
     @Operation(description = "Retorna todos os animais registrados")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Animais encontrados",
@@ -40,7 +42,6 @@ public class AnimalController {
                             schema = @Schema(implementation = MessagePayload.class))}
             )
     })
-    @GetMapping
     public ResponseEntity<?> findAll(@RequestParam(required = false) Optional<String> cor) {
         try {
             List<Animal> pets = cor.map(animalService::filterByColor).orElseGet(animalService::findAll);

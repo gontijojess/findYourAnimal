@@ -1,8 +1,9 @@
 services:
   rabbit:
     image: rabbitmq:3.13-management
-    container_name: RABBIT-SERVER
+    container_name: RABBITMQ-SERVER
     ports:
+      - "5672:5672"
       - "15672:15672"
     networks:
       - find_animal
@@ -13,6 +14,8 @@ services:
       - "8761:8761"
     networks:
       - find_animal
+    depends_on:
+      - rabbit
   gateway:
     image: gontijojessica/gateway:latest
     container_name: GATEWAY-SERVER
@@ -60,3 +63,5 @@ services:
 networks:
   find_animal:
     driver: bridge
+volumes:
+  rabbitmq_data:
